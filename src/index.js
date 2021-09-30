@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from "react-router-dom";
+
+// Provider는 redux store를 사용할 수 있게 해준다 .
+import {Provider} from "react-redux";
+import store from "./redux/configStore";
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  // store 주입 
+  <Provider store = {store}> 
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
